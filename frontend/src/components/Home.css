@@ -1,0 +1,11 @@
+.posts {
+    display: flex;
+    padding: 10px;
+}
+
+.post {
+    border: 1px solid lightgray;
+    border-radius: 1.5px;
+    padding: 5px;
+    margin-right: 5px;
+}
