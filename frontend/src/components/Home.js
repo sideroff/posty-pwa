@@ -19,14 +19,12 @@ class Home extends React.Component {
   }
 
   postTitleChange(event) {
-    console.log(event)
     this.setState({
       postTitle: event.target.value
     })
   }
 
   submitPost(event) {
-    console.log(event)
     this.props.dispatch(addPost({ title: this.state.postTitle, author: 1 }))
   }
 

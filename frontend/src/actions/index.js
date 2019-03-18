@@ -10,6 +10,7 @@ const fetchPosts = () => dispatch => {
 }
 
 const addPost = post => dispatch => {
+  dispatch({ type: types.ADD_POST, payload: post })
   fetch('/posts', {
     method: 'POST',
     headers: {

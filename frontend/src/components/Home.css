@@ -1,5 +1,6 @@
 .posts {
     display: flex;
+    flex-wrap: wrap;
     padding: 10px;
 }
 
@@ -7,5 +8,5 @@
     border: 1px solid lightgray;
     border-radius: 1.5px;
     padding: 5px;
-    margin-right: 5px;
+    margin: 5px;
 }
