@@ -1,4 +1,8 @@
-import types from './../actions/types';
+import {
+  FETCH_POSTS,
+  FETCH_POSTS_SUCCESS,
+  ADD_POST_SUCCESS
+} from './../actions/types';
 
 const defaultState = {
   feed: [],
@@ -8,18 +12,18 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case types.FETCH_POSTS:
+    case FETCH_POSTS:
       return Object.assign({}, state, {
         isFetchingPosts: true,
         feed: [],
       });
-    case types.FETCH_POSTS_SUCCESS:
+    case FETCH_POSTS_SUCCESS:
       return Object.assign({}, state, {
         feed: action.payload,
         isFetchingPosts: false
       });
 
-    case types.ADD_POST_SUCCESS:
+    case ADD_POST_SUCCESS:
       return Object.assign({}, state, {
         feed: [...state.feed, action.payload],
         isAddingPost: false

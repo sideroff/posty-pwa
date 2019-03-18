@@ -54,9 +54,11 @@ class Home extends React.Component {
 
         <div className="posts">
           {this.props.posts.map(post =>
-            <div className="post" key={post.id}>
+            //compound key because of offline support (no id)
+            <div className="post" key={(post.id || '') + post.title}>
               <div>id: {post.id}</div>
               <div>title: {post.title}</div>
+              <div>is persisted: {(!post.$isNotPersisted).toString()}</div>
             </div>
           )}
         </div>
