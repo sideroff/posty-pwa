@@ -1,7 +1,8 @@
 import {
   FETCH_POSTS,
   FETCH_POSTS_SUCCESS,
-  ADD_POST_SUCCESS
+  ADD_POST_SUCCESS,
+  REMOVE_OFFLINE_POST
 } from './../actions/types';
 
 const defaultState = {
@@ -28,6 +29,10 @@ export default (state = defaultState, action) => {
         feed: [...state.feed, action.payload],
         isAddingPost: false
       });
+    case REMOVE_OFFLINE_POST:
+      return Object.assign({}, state, {
+        feed: [...state.feed.filter(x => x.$id !== action.payload)]
+      })
 
     default:
       return state;

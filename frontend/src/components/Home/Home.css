@@ -1,0 +1,25 @@
+.wrapper {
+    padding: 10px;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.post {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 6px;
+    margin: 5px;
+    background-image: linear-gradient(to right, #41f4d6, #7df442);
+}
+
+.post.not-persisted {
+    background-image: linear-gradient(to right, lightgray, lightgray);
+}
+
+.post-addition-form {
+    margin-top: 10px;
+}

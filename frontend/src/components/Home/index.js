@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { fetchPosts, addPost } from './../actions'
+import { fetchPosts, addPost } from '../../actions'
 
-import { Loading } from './index'
+import Loading from '../Loading'
 
 import "./Home.css"
 
@@ -38,9 +38,9 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>home page</div>
-        <button onClick={() => this.fetchPosts()} disabled={this.props.isFetchingPosts}>get postss</button>
+      <div class='wrapper'>
+        <h3>posty</h3>
+        <button onClick={() => this.fetchPosts()} disabled={this.props.isFetchingPosts}>get posts</button>
 
         <Loading isLoading={this.props.isFetchingPosts} />
         <div className="post-addition-form">
@@ -55,7 +55,7 @@ class Home extends React.Component {
         <div className="posts">
           {this.props.posts.map(post =>
             //compound key because of offline support (no id)
-            <div className="post" key={(post.id || '') + post.title}>
+            <div className={'post ' + (post.$isNotPersisted ? 'not-persisted' : '')} key={(post.id || '') + post.title}>
               <div>id: {post.id}</div>
               <div>title: {post.title}</div>
               <div>is persisted: {(!post.$isNotPersisted).toString()}</div>
@@ -67,12 +67,7 @@ class Home extends React.Component {
   }
 }
 
-
-
-export default connect(state => ({ posts: state.posts.feed, isFetchingPosts: state.posts.isFetchingPosts }), dispatch => ({ dispatch }))(Home)
-
-// export default () => {
-//   return (
-//     <div>hello from home</div>
-//   )
-// }
+export default connect(state => ({
+  posts: state.posts.feed,
+  isFetchingPosts: state.posts.isFetchingPosts
+}), dispatch => ({ dispatch }))(Home)

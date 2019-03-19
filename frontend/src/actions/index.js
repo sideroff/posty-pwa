@@ -6,6 +6,7 @@ import {
   ADD_POST,
   ADD_POST_SUCCESS,
   ADD_POST_FAILURE,
+  REMOVE_OFFLINE_POST,
 
 
 } from './types'
@@ -42,8 +43,15 @@ const addPost = post => (dispatch, getState) => {
 
   if (getState().flags.networkStatus === 'offline') {
     addPostAction.payload.$isNotPersisted = true;
+    addPostAction.payload.$id = Date.now();
     addToOfflineActions(addPostAction)
     return dispatch({ type: ADD_POST_SUCCESS, payload: addPostAction.payload })
+  }
+
+
+
+  if (post.$id) {
+    dispatch({ type: REMOVE_OFFLINE_POST, payload: post.$id })
   }
 
   // remove posts with isNotPersisted flag set to true
@@ -61,7 +69,6 @@ const addPost = post => (dispatch, getState) => {
 }
 
 const persistOfflineActions = () => dispatch => {
-  console.log('here boi')
   let offlineActions = getOfflineActions();
   setOfflineActions([]);
 

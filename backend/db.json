@@ -14,69 +14,9 @@
       "author": "post 2 author"
     },
     {
-      "id": 3,
       "title": "post 3 title",
-      "author": "post 3 author"
-    },
-    {
-      "id": 4,
-      "title": "post 4 title",
-      "author": "post 4 author"
-    },
-    {
-      "id": 5,
-      "title": "post 5 title",
-      "author": "post 5 author"
-    },
-    {
-      "id": 6,
-      "title": "post 6 title",
-      "author": 1
-    },
-    {
-      "id": 7,
-      "title": "post 7 title",
-      "author": 1
-    },
-    {
-      "id": 8,
-      "title": "post 8 title",
-      "author": 1
-    },
-    {
-      "title": "post 9 title",
       "author": 1,
-      "id": 9
-    },
-    {
-      "title": "post 10 title",
-      "author": 1,
-      "id": 10
-    },
-    {
-      "title": "post 11 title",
-      "author": 1,
-      "id": 11
-    },
-    {
-      "title": "post 12 title",
-      "author": 1,
-      "id": 12
-    },
-    {
-      "title": "post 13 title",
-      "author": 1,
-      "id": 13
-    },
-    {
-      "title": "post 14 title",
-      "author": 1,
-      "id": 14
-    },
-    {
-      "title": "post 15 title",
-      "author": 1,
-      "id": 15
+      "id": 3
     }
   ],
   "comments": [

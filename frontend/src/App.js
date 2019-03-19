@@ -5,13 +5,17 @@ import store from './store'
 
 import networkChangeListener from './services/networkChangeListener'
 
-import { Home } from './components';
+import {
+  Header,
+  Home,
+} from './components';
 
 networkChangeListener(store);
 
 export default () => {
   return (
     <Provider store={store}>
+      <Header />
       <Home />
     </Provider>
   )
